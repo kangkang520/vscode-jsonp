@@ -28,13 +28,13 @@ export function formatJSONP(text: string) {
 		if (ch == '{' || ch == '[') {
 			addTabs()
 			tabs++
-			buffer += ch
+			buffer += ch + ' '
 			continue
 		}
 		if (ch == '}' || ch == ']') {
 			tabs--
 			addTabs()
-			buffer += ch
+			buffer += ' ' + ch
 			continue
 		}
 		if (ch == ':') {
@@ -75,5 +75,20 @@ export function formatJSONP(text: string) {
 		addTabs()
 		buffer += ch
 	}
-	return buffer.replace(/, \n/g, ',\n')
+	return buffer
+		.replace(/, \n/g, ',\n')
+		.replace(/\{ \n/g, '{\n')
+		.replace(/\n(\t*) \}/g, '\n$1}')
 }
+
+// console.log(formatJSONP(`
+
+// {id:1, name:'343', age:333
+// 	test:"fds",
+// 	abc:{
+// 		"fdfds":3343,
+// 		"xxxx":true,
+// 	}
+// }
+
+// `))

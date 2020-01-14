@@ -2,7 +2,7 @@
 	"name": "vscode-jsonp",
 	"displayName": "vscode-jsonp",
 	"description": "",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"icon": "res/icon.png",
 	"publisher": "luyizhi",
 	"repository": {
@@ -13,18 +13,31 @@
 		"vscode": "^1.39.0"
 	},
 	"categories": [
-		"Programming Languages"
+		"Programming Languages",
+		"Formatters"
 	],
 	"activationEvents": [
 		"onLanguage:jsonp"
+	],
+	"keywords": [
+		"jsonp",
+		"json",
+		"jsonc",
+		"prefix",
+		"yizhi",
+		"prefix-json"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"languages": [
 			{
 				"id": "jsonp",
-				"aliases": ["JSON with Prefix"],
-				"extensions": [".jsonp"],
+				"aliases": [
+					"JSON with Prefix"
+				],
+				"extensions": [
+					".jsonp"
+				],
 				"configuration": "./language-configuration.json"
 			}
 		],
