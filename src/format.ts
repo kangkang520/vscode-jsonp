@@ -77,18 +77,19 @@ export function formatJSONP(text: string) {
 	}
 	return buffer
 		.replace(/, \n/g, ',\n')
-		.replace(/\{ \n/g, '{\n')
-		.replace(/\n(\t*) \}/g, '\n$1}')
+		.replace(/\{ +/g, '{ ')
+		.replace(/\{ +\n/g, '{\n')
+		.replace(/\n(\t*) +\}/g, '\n$1}')
 }
 
-// console.log(formatJSONP(`
+console.log(formatJSONP(`
 
-// {id:1, name:'343', age:333
-// 	test:"fds",
-// 	abc:{
-// 		"fdfds":3343,
-// 		"xxxx":true,
-// 	}
-// }
+{ id:1, name:'343', age:333
+	test:"fds",
+	abc:{
+		"fdfds":3343,
+		"xxxx":true,
+	}
+ }
 
-// `))
+`))
