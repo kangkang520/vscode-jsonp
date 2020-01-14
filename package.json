@@ -3,7 +3,7 @@
 	"displayName": "vscode-jsonp",
 	"description": "",
 	"version": "0.0.1",
-	"icon": "./res/icon.png",
+	"icon": "res/icon.png",
 	"publisher": "luyizhi",
 	"repository": {
 		"type": "git",
@@ -41,7 +41,6 @@
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile",
-		"build": "npm run compile && vsce package",
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
